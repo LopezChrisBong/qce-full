@@ -1,0 +1,10 @@
+How to install json server
+
+///Command Prompt///
+
+///Install Json Server
+npm install -g json-server
+
+
+//Start Json Server
+json-server --watch db.json
