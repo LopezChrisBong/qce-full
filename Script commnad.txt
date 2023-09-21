@@ -1,0 +1,1 @@
+npx @nestjs/cli g resource todos = nest g resource

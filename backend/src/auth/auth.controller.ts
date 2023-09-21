@@ -1,37 +1,25 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { AuthService } from './auth.service';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Req, Res } from '@nestjs/common';
+import { AuthService } from './AuthService';
 import { CreateAuthDto } from './dto/create-auth.dto';
-import * as bcrypt from 'bcrypt';
+import { UpdateAuthDto } from './dto/update-auth.dto';
+import { AuthGuard } from '@nestjs/passport';
 
-@Controller('authsample')
-export class authsController {
-  constructor(private readonly authsService: AuthService) {}
+@Controller('auth')
+export class AuthController {
+  constructor(private readonly authService: AuthService) {}
+ 
+  @Get('google')
+  @UseGuards(AuthGuard('google'))
+  async googleAuth() {}
 
-  @Post()
-  async create(@Body() createauthDto: CreateAuthDto) {
-    // console.log(createauthDto)
-    
-    return this.authsService.validateUser(createauthDto);
-    
+  @Get('google/callback')
+  @UseGuards(AuthGuard('google'))
+  googleRedirect(@Req() req, @Res() res) {
+    return this.authService.googleRedirect(req, res)
   }
 
-  // @Get()
-  // findAll() {
-  //   return this.authService.findAll();
-  // }
-
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.authService.findOne(+id);
-  // }
-
-  // @Patch(':id')
-  // update(@Param('id') id: string, @Body() updateAuthDto: UpdateAuthDto) {
-  //   return this.authService.update(+id, updateAuthDto);
-  // }
-
-  // @Delete(':id')
-  // remove(@Param('id') id: string) {
-  //   return this.authService.remove(+id);
-  // }
+  @Post('google/login')
+  googleLogin(@Req() req){
+      return this.authService.googleLogin(req);
+  }
 }

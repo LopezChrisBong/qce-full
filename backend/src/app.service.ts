@@ -1,11 +1,60 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { createPdf } from '@saemhco/nestjs-html-pdf';
 import path from 'path';
 import {join} from 'path';
+import { User } from './users/entities/user.entity';
+import { JwtService } from '@nestjs/jwt';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 const PDFDocument = require('pdfkit-table');
 
 @Injectable()
 export class AppService {
+  user: any; 
+  constructor(
+    private jwtService: JwtService,
+  ) {}
+
+  generateJwt(payload) {
+    return this.jwtService.sign(payload);
+  }
+
+  async googleLogin(req: { user: any; }) {
+    if (!req.user) {
+    throw new BadRequestException('Unauthenticated');
+    }
+    return {
+      // message: 'User information from google',
+      user: req.user
+    }
+  }
+  async registerUser(user: { email: any; }) {
+    try {
+      const newUser = this.user.create(user);
+      newUser.username = generateFromEmail(user.email, 5);
+        console.log()
+      await this.user.save(newUser);
+
+      return this.generateJwt({
+        sub: newUser.id,
+        email: newUser.email,
+      });
+    } catch {
+      throw new InternalServerErrorException();
+    }
+  }
+  
+  async findUserByEmail(email: any) {
+    const user = await this.user.findOne({ email });
+
+    if (!user) {
+      return null;
+    }
+
+    return user;
+  }
+
+
   getHello(): string {
     return 'Hello World!';
   }
@@ -106,3 +155,7 @@ export class AppService {
 }
 
 }
+function generateFromEmail(email: any, arg1: number): any {
+  throw new Error('Function not implemented.');
+}
+

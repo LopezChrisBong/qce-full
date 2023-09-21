@@ -12,14 +12,18 @@ export class TokenlogsService {
   constructor(@InjectRepository(User) private readonly userRepository: Repository<User>,
           private jwtServices: JwtService){}
 
-          
+     
+   async googleSignin(createTokenlogDto:CreateTokenlogDto): Promise<any>{
+
+    // const user = await this.jwtServices.signAsync();
+
+   }       
+
  
   async signinLocal(createTokenlogDto:CreateTokenlogDto,): Promise<any>{
 
     // console.log(createTokenlogDto)
    const  user = await this.userRepository.findOneBy({username: createTokenlogDto.username});
-    
- 
 
    if(user){
           const match = await bcrypt.compare(createTokenlogDto.password, user.password);
@@ -57,5 +61,8 @@ export class TokenlogsService {
       const user = await this.userRepository.create(createTokenlogDto);
       return  this.userRepository.save(user);
   }
+
+
+  
   
 }

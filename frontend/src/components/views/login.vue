@@ -13,15 +13,20 @@
                 <button class="border-none bg-green-400 text-center p-1 w-16">Login</button>
                <a href="signup" class="bg-green-400 p-1 rounded-md">signup</a>
             </div>
-           
+
     </form>    
+    <div id="googleSignInBtn" class="g_id_signin"></div>
         </div>
     <!--
 
     -->
     </div>
 </template>
-
+<style>
+    .google_g{
+        display: inline-flex !important;
+    }
+</style>
 <script>
 import axios from 'axios'
 
@@ -37,17 +42,45 @@ export default {
             
         }
     },
+    mounted(){
+            window.addEventListener("resize", this.widthResizeHandler);
+            google.accounts.id.initialize({
+                client_id: import.meta.env.VITE_GOOGLE_CLIENTID,
+                callback:this.handleCredentialResponse,
+            })
+
+        },
     
     methods:{
-      async handleSubmit(){
+
+        
+
+        async handleCredentialResponse(response){
+            let data ={
+                    google_token:response.credential
+            }
+            // const toast = useToast();
+            // console.log(response.credential)
+            //different module
+             const cred = await axios.post('http://localhost:3000/auth/google/login',data); 
+             console.log(cred)
+            //  localStorage.setItem('access_token',cred.data.access_token);
+            //  console.log(cred.data.access_token)
+             this.$router.push('/home');
+        },
+
+        async handleSubmit(){
             let data ={
                     username: this.Admin.username,
                     password: this.Admin.password
             }
-                const response = await axios.post('http://localhost:3000/auth/local/signIn',data);
+         
+                const response = await axios.post('http://localhost:3000/auth/local/signIn', data)
                 console.log(response)
                 localStorage.setItem('access_token', response.data.access_token);
                 this.$router.push('/home');
+
+                
 
 
         //     axios.post('http://localhost:3000/auth/local/signIn',data ).then((res)=>{
@@ -69,7 +102,9 @@ export default {
             // })
 
             // alert("im working");
-        }
+        },
+        
+       
     }
 
 </script>

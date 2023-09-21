@@ -29,6 +29,7 @@ export class PdfgenService {
     //   'as.name as name',
     // ])
     // .getRawMany();
+  
     const data = {
     title: '',
     H1:`QUALITATIVE CONTRIBUTION (QCE) RESULTS`,
@@ -76,23 +77,23 @@ export class PdfgenService {
     //   shipping: 15.0,
     //   total: 1565.0,
       imagehead: 'http://localhost:3000/pdfgen/header',
-      // imagefoot: 'http://localhost:3000/pdfgen/footer',
+      imagefoot: 'http://localhost:3000/pdfgen/footer',
     };
     // const images = {
     //   imagehead1: 'http://localhost:3000/pdfgen/header',
     // };
     const options = {
       format: 'A4',
-      displayHeaderFooter: true,
+      displayHeaderFooter: false,
       margin: {
-        left: '10mm',
-        top: '25mm',
-        right: '10mm',
-        bottom: '15mm',
+        left: '0.25in',
+        top: '0.25in',
+        right: '0.25in',
+        bottom: '0.25in',
       },
       headerTemplate:``,
-      footerTemplate:
-        '<div style="width: 100%; text-align: center; font-size: 10px;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+       footerTemplate:'',
+      //   '<div style="width: 100%; text-align: center; font-size: 10px;">Page <span class="pageNumber"> </span> of <span class="totalPages"></span></div>',
       landscape: false,
     };
     const filePath = join(process.cwd(), './src/templates', 'pdf-invoice.hbs');;
