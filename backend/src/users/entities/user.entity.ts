@@ -3,6 +3,12 @@ import { Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn
 
 @Entity()
 export class User {
+    save(newUser: void) {
+      throw new Error('Method not implemented.');
+    }
+    create(user: any) {
+      throw new Error('Method not implemented.');
+    }
     @PrimaryGeneratedColumn({type:'int'})
     id:number;
 

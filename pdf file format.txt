@@ -1,189 +1,100 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Test</title>
-<style type="text/css">
-    table { page-break-inside:auto; padding-bottom:4rem ; }
-    tr    { page-break-inside:avoid; page-break-after:auto }
-    thead { display:table-header-group; top: 0; }
-    tfoot { display:table-footer-group; bottom: 0; position:relative;}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  </head>
+  <style>
+    .header{
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        border: 1px solid black ;
 
-   
-  
-  
-    
-   
-</style>
-</head>
-<body>
-    
-    <table>
-        <thead>
-            <tr><th colspan="9"><img src={{imagehead}} alt="DNSC" width="100%" height=""></th></tr>
-        </thead>
-        <tfoot align="center">
-            <tr><td colspan="9"><img src={{imagefoot}} alt="DNSC" width="100%" height=""></td></tr>
-        </tfoot>
-    <tbody>
-        <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                 <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                 <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                 <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                 <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                 <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
+    }
+    .footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        border: 1px solid black ;
+        page-break-before: always;
+
+    }
+    thead{
+        display: table-header-group;
+    }
+    tfoot{
+        display: table-footer-group;
+    }
+    .top{
+        margin-top: 3.2rem;
+    }
+    table{
+        page-break-inside:auto ;
+    }
+
+    body{
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+  </style>
+ 
+    <body>
+        <div class="">
+             <div class="header" style="align-items: center;" > <img src={{imagehead}} alt="Girl in a jacket" width="100%" height=""></div>
+               <div class="footer" style="align-items: center;" > <img src={{imagefoot}} alt="Girl in a jacket" width="100%" height=""></div>
+               <hr>
+            
+            <div class="top">
+                <div class="container mb-5 mt-3">
+                <div style="" >
+                    <div class="col-xl-9 text-center">
+                   <span style="font-weight: bold;">{{H1}}<br>
+                    <h6>{{Year}}</h6>
+                    <h4>{{Summary}}</h4>
+                   </span>
+                   
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="col-md-12">
+                    </div>
+                    <div class="row  justify-content-center text-align-center">
+                    <div class="col-12">
+                        <table class="table-auto  mt-2 mb-5">
+                            {{!-- <thead>
+                                <img src={{imagehead}} alt="Girl in a jacket" width="100%" height="">
+                            </thead>
+                            <tfoot>
+                                <img src={{imagehead}} alt="Girl in a jacket" width="100%" height="">
+                            </tfoot> --}}
+                                <tr >
+                                    <td rowspan="2" class="border font-bold">No.</td>
+                                    <td rowspan="2"  class="border font-bold ">Name of Faculty</td>
+                                    <td  class="border font-bold">Self</td>
+                                    <td  class="border font-bold">Peer</td>
+                                    <td  class="border font-bold">Students</td>
+                                    <td  class="border font-bold">Supervisor</td>
+                                    <td rowspan="2"  class="border font-bold">Total</td>
+                                    <td rowspan="2"  class="border font-bold ">Descriptive Rating</td>
+                                    <td rowspan="2"  class="border font-bold">Qualitative Description</td>
                                 </tr>
                                 <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
+                                    <th class="border font-bold">20%</th>
+                                    <th class="border font-bold">20%</th>
+                                    <th class="border font-bold"> 30%</th>
+                                    <th class="border font-bold">30%</th>
                                 </tr>
 
-                                 <tr>
+                           
+                            <tbody>
+                                <tr>
                                     <td class="border">1</td>
                                     <td class="border">JOENABEL M. AGOD</td>
                                     <td class="border">20.00</td>
@@ -255,7 +166,7 @@
                                   <td class="border">	The performance almost always exceeds the job requirements.
                                         The Faculty is an exceptional rotle model.</td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td class="border">1</td>
                                     <td class="border">JOENABEL M. AGOD</td>
                                     <td class="border">20.00</td>
@@ -267,7 +178,7 @@
                                   <td class="border">	The performance almost always exceeds the job requirements.
                                         The Faculty is an exceptional rotle model.</td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td class="border">1</td>
                                     <td class="border">JOENABEL M. AGOD</td>
                                     <td class="border">20.00</td>
@@ -279,7 +190,7 @@
                                   <td class="border">	The performance almost always exceeds the job requirements.
                                         The Faculty is an exceptional rotle model.</td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td class="border">1</td>
                                     <td class="border">JOENABEL M. AGOD</td>
                                     <td class="border">20.00</td>
@@ -291,7 +202,7 @@
                                   <td class="border">	The performance almost always exceeds the job requirements.
                                         The Faculty is an exceptional rotle model.</td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td class="border">1</td>
                                     <td class="border">JOENABEL M. AGOD</td>
                                     <td class="border">20.00</td>
@@ -303,7 +214,31 @@
                                   <td class="border">	The performance almost always exceeds the job requirements.
                                         The Faculty is an exceptional rotle model.</td>
                                 </tr>
-                                 <tr>
+                                <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                <tr>
                                     <td class="border">1</td>
                                     <td class="border">JOENABEL M. AGOD</td>
                                     <td class="border">20.00</td>
@@ -316,7 +251,104 @@
                                         The Faculty is an exceptional rotle model.</td>
                                 </tr>
 
-    </tbody>
-    </table>
-</body>
+                            </tbody>
+                        </table> 
+                    </div>
+ 
+                    {{!-- <table class="table table-striped">
+                       
+                            <tr>
+                                <th>Name</th>
+                            
+                            
+                                <th>Username</th>
+                            
+                            
+                                <th>Password</th>
+                            </tr>
+                                 {{#each items}}
+                        <tbody>
+                          
+                            <tr>
+                                <td>
+                            <p class="fw-bold">{{description}}</p>
+                                </td> 
+
+                                <td>
+                            <p class="fw-bold">{{detail.size}}</p>
+                                </td>
+                                
+                                <td>
+                            <p class="fw-bold">{{detail.color}}</p>
+                                </td>
+                            </tr>
+                        </tbody>  {{/each}}
+                    </table> --}}
+
+                     {{!-- <table class="table table-striped">
+                       
+                            <tr>
+                                <th>Name</th>
+                            
+                            
+                                <th>Username</th>
+                            
+                            
+                                <th>Date</th>
+                            </tr>
+                                
+                        <tbody>
+                             {{#each userslist}}
+                            <tr>
+                                <td>
+                            <p class="fw-bold">{{name}}</p>
+                                </td> 
+                           
+                               
+                                <td>
+                            <p class="fw-bold">{{username}}</p>
+                                </td>
+
+                                 <td>
+                            <p class="fw-bold">{{date}}</p>
+                                </td>
+
+                             </tr>
+                            {{/each}}
+                        </tbody>  
+                    </table> --}}
+                    {{!-- <div class="col-4">
+                        <ul class="list-unstyled">
+                        <li class="text-muted"><i class="fas fa-circle" style="color:#8f8061 ;"></i> <span
+                            class="fw-bold">ID:</span>#123-456</li>
+                        <li class="text-muted"><i class="fas fa-circle" style="color:#8f8061;"></i>
+                            <span class="me-1 fw-bold">Status:</span>
+                                {{#ifCond status "===" "paid"}}
+                                <span class="badge bg-warning text-black fw-bold">Unpaid</span>
+                                {{/ifCond}}
+                                 {{#ifCond status "===" "unpaid"}}
+                                <span class="badge bg-success text-black fw-bold">Paid</span>
+                                {{/ifCond}}
+                        </li>
+                        </ul>
+                    </div> --}}
+                    </div>
+                    
+                    {{!-- <div class="row">
+                        <div class="col-xl-3">
+                            <ul class="list-unstyled">
+                            <li class="text-muted ms-3"><span class="text-black me-4">SubTotal</span>${{subTotal}}</li>
+                            <li class="text-muted ms-3 mt-2"><span class="text-black me-4">Shipping</span>${{shipping}}</li>
+                            </ul>
+                            <p class="text-black float-start"><span class="text-black me-3"> Total Amount</span><span
+                                style="font-size: 20px;">${{total}}</span></p>
+                        </div>
+                    </div> --}}
+                </div>
+                </div>
+                
+            </div>
+            {{!-- <span style="align-items: center;" > <img src={{imagefooter}} alt="Girl in a jacket" width="100%" height=""></span> --}}
+        </div>
+    </body>
 </html>

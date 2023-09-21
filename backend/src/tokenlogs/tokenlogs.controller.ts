@@ -13,9 +13,7 @@ export class TokenlogsController {
   }
   @Post('local/signUp')
   signupLocal(@Body() createTokenlogDto: CreateTokenlogDto) {
-    
     return this.tokenlogsService.signupLocal(createTokenlogDto);
   }
-
 
 }
