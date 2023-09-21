@@ -5,15 +5,13 @@
 <title>Test</title>
 <style type="text/css">
     table { page-break-inside:avoid;  page-break-before:always ; }
-    tr    { page-break-inside:avoid; page-break-after:auto }
+    tr,td    { page-break-inside:avoid; page-break-after:auto }
     @media print{
       thead { display:table-header-group; top: 0; }
-      tfoot { display:table-footer-group; bottom: 0; position: fixed;}
+      tfoot { display:table-footer-group; bottom: 0; position: relative; opacity: 30%;}
+    
     }
-     html, body {
-    width: 210mm;
-    height: 297mm;
-  }
+    
    
 
  
@@ -24,7 +22,7 @@
 </style>
 </head>
 <body>
-    <header></header>
+    
     <table>
         <thead>
             <tr><th colspan="9"><img src={{imagehead}} alt="DNSC" width="100%" height=""></th></tr>
@@ -347,7 +345,7 @@
                                         The Faculty is an exceptional rotle model.</td>
                                 </tr>
                                  <tr>
-                                    <td class="border">26</td>
+                                    <td class="border">1</td>
                                     <td class="border">JOENABEL M. AGOD</td>
                                     <td class="border">20.00</td>
                                     <td class="border">20.00</td>
@@ -457,5 +455,6 @@
 
     </tbody>
     </table>
+   
 </body>
 </html>

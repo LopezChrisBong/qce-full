@@ -82,9 +82,9 @@ export class PdfgenService {
     // const images = {
     //   imagehead1: 'http://localhost:3000/pdfgen/header',
     // };
-//     const imagefooter = `<div style="display: inline-block; width: 75%; margin: 0 2cm">
-//     <img style="height: 50px;" src="http://localhost:3000/pdfgen/footer" />  
-// </div>`
+    // const imagefooter = `<div style=" width: 75%; margin: 0 2cm">
+    // <img style="height: 50px;" src="http://localhost:3000/pdfgen/footer" />  
+    //   </div>`
     const options = {
       format: 'A4',
       displayHeaderFooter: true,
@@ -92,11 +92,11 @@ export class PdfgenService {
         left: '0.25in',
         top: '0.25in',
         right: '0.25in',
-        bottom: '0.25in',
+        bottom: '0.60in',
       },
       headerTemplate:``,
-       footerTemplate:``,
-      //   '<div style="width: 100%; text-align: center; font-size: 10px;">Page <span class="pageNumber"> </span> of <span class="totalPages"></span></div>',
+       footerTemplate:
+        '<div style="width: 100%; text-align: center; font-size: 10px;">Page <span class="pageNumber"> </span> of <span class="totalPages"></span></div>',
       landscape: false,
     };
     const filePath = join(process.cwd(), './src/templates', 'pdf-invoice.hbs');;
