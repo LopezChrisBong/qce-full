@@ -132,6 +132,8 @@ export class AppService {
               'https://promart.vteximg.com.br/arquivos/ids/931599-1000-1000/image-b08a9ed36e114598bc56d7d4a5e7dd2d.jpg?v=637569550232800000',
           },
     ],
+    imagehead: 'http://localhost:3000/pdfgen/header',
+    imagefoot: 'http://localhost:3000/pdfgen/footer',
     subTotal: 1550.0,
     shipping: 15.0,
     total: 1565.0,
@@ -145,12 +147,12 @@ export class AppService {
       right: '10mm',
       bottom: '15mm',
     },
-    headerTemplate: `<div style="width: 100%; text-align: center;"><span style="font-size: 20px;">@saemhco CORP</span><br><span class="date" style="font-size:15px"><span></div>`,
+    headerTemplate: ``,
     footerTemplate:
-      '<div style="width: 100%; text-align: center; font-size: 10px;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+      '',
     landscape: true,
   };
-  const filePath = join(process.cwd(), '/src/templates', 'pdf-invoice.hbs');;
+  const filePath = join(process.cwd(), '/src/templates', 'pdf-profile.hbs');;
   return createPdf(filePath, options, data);
 }
 
