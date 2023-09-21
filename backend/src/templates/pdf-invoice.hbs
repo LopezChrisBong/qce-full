@@ -4,12 +4,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Test</title>
 <style type="text/css">
-    table { page-break-inside:auto; padding-bottom:4rem ; }
+    table { page-break-inside:avoid;  page-break-before:always ; }
     tr    { page-break-inside:avoid; page-break-after:auto }
-    thead { display:table-header-group; top: 0; }
-    tfoot { display:table-footer-group; bottom: 0; position:relative;}
-
+    @media print{
+      thead { display:table-header-group; top: 0; }
+      tfoot { display:table-footer-group; bottom: 0; position: fixed;}
+    }
+     html, body {
+    width: 210mm;
+    height: 297mm;
+  }
    
+
+ 
   
   
     
@@ -17,7 +24,7 @@
 </style>
 </head>
 <body>
-    
+    <header></header>
     <table>
         <thead>
             <tr><th colspan="9"><img src={{imagehead}} alt="DNSC" width="100%" height=""></th></tr>
@@ -85,6 +92,17 @@
                                     <td class="border">Outstanding</td>
                                   <td class="border">	The performance almost always exceeds the job requirements.
                                         The Faculty is an exceptional rotle model.</td>
+                                </tr> <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
                                 </tr>
                                  <tr>
                                     <td class="border">1</td>
@@ -98,7 +116,7 @@
                                   <td class="border">	The performance almost always exceeds the job requirements.
                                         The Faculty is an exceptional rotle model.</td>
                                 </tr>
-                                <tr>
+                                 <tr>
                                     <td class="border">1</td>
                                     <td class="border">JOENABEL M. AGOD</td>
                                     <td class="border">20.00</td>
@@ -110,7 +128,7 @@
                                   <td class="border">	The performance almost always exceeds the job requirements.
                                         The Faculty is an exceptional rotle model.</td>
                                 </tr>
-                                <tr>
+                                 <tr>
                                     <td class="border">1</td>
                                     <td class="border">JOENABEL M. AGOD</td>
                                     <td class="border">20.00</td>
@@ -122,55 +140,7 @@
                                   <td class="border">	The performance almost always exceeds the job requirements.
                                         The Faculty is an exceptional rotle model.</td>
                                 </tr>
-                                <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                <tr>
-                                    <td class="border">1</td>
-                                    <td class="border">JOENABEL M. AGOD</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">20.00</td>
-                                    <td class="border">26.18</td>
-                                    <td class="border">30.00</td>
-                                    <td class="border">96.18</td>
-                                    <td class="border">Outstanding</td>
-                                  <td class="border">	The performance almost always exceeds the job requirements.
-                                        The Faculty is an exceptional rotle model.</td>
-                                </tr>
-                                <tr>
+                                 <tr>
                                     <td class="border">1</td>
                                     <td class="border">JOENABEL M. AGOD</td>
                                     <td class="border">20.00</td>
@@ -209,6 +179,175 @@
                                 </tr>
                                  <tr>
                                     <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                 <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                 <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                 <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                 <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border">1</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border">23</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+
+                                 <tr>
+                                    <td class="border">24</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                 <tr>
+                                    <td class="border">25</td>
+                                    <td class="border">JOENABEL M. AGOD</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">20.00</td>
+                                    <td class="border">26.18</td>
+                                    <td class="border">30.00</td>
+                                    <td class="border">96.18</td>
+                                    <td class="border">Outstanding</td>
+                                  <td class="border">	The performance almost always exceeds the job requirements.
+                                        The Faculty is an exceptional rotle model.</td>
+                                </tr>
+                                 <tr>
+                                    <td class="border">26</td>
                                     <td class="border">JOENABEL M. AGOD</td>
                                     <td class="border">20.00</td>
                                     <td class="border">20.00</td>
