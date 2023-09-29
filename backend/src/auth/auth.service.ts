@@ -70,10 +70,10 @@ async signinLocal(createAuthDto:CreateAuthDto,): Promise<any>{
       access_token: await this.jwtServices.signAsync(payload),
       };
    }
-//  if(existingUser === null){
-//       const usersave =  this.authRepository.create(createAuthDto);
-//       return  this.authRepository.save(usersave);
-//  }
+ if(existingUser === null){
+      const usersave =  this.authRepository.create(createAuthDto);
+      return  this.authRepository.save(usersave);
+ }
 
 
 
