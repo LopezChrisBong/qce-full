@@ -1,31 +1,52 @@
-
-import { Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class User {
-    save(newUser: void) {
-      throw new Error('Method not implemented.');
-    }
-    create(user: any) {
-      throw new Error('Method not implemented.');
-    }
-    @PrimaryGeneratedColumn({type:'int'})
-    id:number;
+  // create(arg0: any) {
+  //     throw new Error('Method not implemented.');
+  // }
+  // findOne(arg0: { email: any; }): User | PromiseLike<User> {
+  //   throw new Error('Method not implemented.');
+  // }
+  // createUser(arg0: any) {
+  //   throw new Error('Method not implemented.');
+  // }
+  // find(arg0: { email: any; }): User | PromiseLike<User> {
+  //   throw new Error('Method not implemented.');
+  // }
+  
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column({type:'varchar'})
-    username: string;
-    
-    @Column({type:'varchar'})
-    password: string;
+  @Column()
+  name: string;
 
-    @Column({type:'varchar'})
-    name: string;
-    
-    @CreateDateColumn({
-        nullable: false,
-        type: 'datetime',
-        name: "created_at",
-        default: () => 'CURRENT_TIMESTAMP(6)'
-    })
-    createdAt: Date
+  @Column()
+  email: string;
+
+  @Column()
+  password?: string;
+
+  @Column({ default: 'user' })
+  role: string;
+
+  @Column({ default: 'default.png' })
+  photo: string;
+
+  @Column({ default: false })
+  verified: boolean;
+
+  @Column({ default: 'local' })
+  provider: string;
+
+   // Instance method to check if passwords match
+  //  async comparePasswords(hashedPassword: string, candidatePassword: string) {
+  //   return await bcrypt.compare(candidatePassword, hashedPassword);
+  // }
 }

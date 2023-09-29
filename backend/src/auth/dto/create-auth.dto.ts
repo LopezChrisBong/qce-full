@@ -5,7 +5,16 @@ export class CreateAuthDto {
     name: string;
 
     @ApiProperty()
-    username: string;
+    email: string;
+
+    @ApiProperty()
+    picture: string;
+
+    @ApiProperty()
+    verified: boolean;
+
+//   user: DeepPartial<Auth>[];
+
  
  
 }

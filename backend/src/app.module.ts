@@ -13,6 +13,7 @@ import { AuthModule } from './auth/auth.module';
 import { AuthUtilsModule } from './auth-utils/auth-utils.module';
 import { CacheModule } from '@nestjs/cache-manager';
 import { JwtModule } from '@nestjs/jwt';
+import {Auth} from './auth/entities/auth.entity'
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import { JwtModule } from '@nestjs/jwt';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [User],
+      entities: [User,Auth],
       synchronize: true,
       }),
      

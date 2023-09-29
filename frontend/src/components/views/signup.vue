@@ -5,13 +5,13 @@
         </div>
         <div class="flex justify-center">
         <form >
-            <div>
+            <div class="">
                 <input type="text" v-model="model.user.name" placeholder="Enter Name"  class="border mb-2 px-12 py-1" required/><br/>
-                <input type="email"  placeholder="Enter Username" class="border mb-2 px-12 py-1" v-model="model.user.username" :rules="[rules.required, rules.email]"/> <br/>
+                <input type="email"  placeholder="Enter email" class="border mb-2 px-12 py-1" v-model="model.user.email" :rules="[rules.required, rules.email]"/> <br/>
                 <input type="password"  placeholder="Enter Password" class="border px-12 py-1" v-model="model.user.password" /> <br/>
             </div>
             <div class="flex justify-center" >
-            <button type="button" class="bg-green-600 "  @click="saveUser">Save</button>
+            <button type="button" class="bg-green-600"  @click="saveUser" >Save</button>
         </div>
             <div class="flex mt-5 justify-between mx-8 ">
                 <a href="/" class="bg-green-400 p-1 rounded-md">Log In</a>
@@ -34,7 +34,7 @@ import axios from 'axios'
                 model:{
                     user:{
                         name:'',
-                        username:'',
+                        email:'',
                         password:'',
                     }                                                                  
                 },
@@ -47,7 +47,7 @@ import axios from 'axios'
         methods:{
             saveUser(){
 
-                if((this.model.user.username === "" || this.model.user.password  === "") ){
+                if((this.model.user.email === "" || this.model.user.password  === "") ){
                     alert('Plese fill-up all fields');
                 }
                 else{

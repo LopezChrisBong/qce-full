@@ -1,9 +1,9 @@
 <template>
-    <div class="">
+    <div class=" border bg-green-300">
         <div class="flex justify-center">
         <p class="text-lg font-semibold">Login</p>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center bg-green-500 p">
     <form @submit.prevent="handleSubmit">
             <div>
                 <input type="email" v-model="Admin.username" placeholder="Enter username" class="border mb-2 px-12 py-1 " required/><br/>
@@ -12,11 +12,22 @@
             <div class="flex mt-5 justify-between mx-8 ">
                 <button class="border-none bg-green-400 text-center p-1 w-16">Login</button>
                <a href="signup" class="bg-green-400 p-1 rounded-md">signup</a>
+            </div> 
+            <div>
+               <div id="googleSignInBtn" class="g_id_signin" style="margin-top: 1rem; margin-left: 0; padding: 1rem;"></div> 
             </div>
+        <!-- <GoogleLogin :callback="callback" prompt auto-login/> -->
 
-    </form>    
-    <div id="googleSignInBtn" class="g_id_signin"></div>
-        </div>
+            
+    </form> 
+    <div>
+    </div>
+   
+</div>   
+    
+    
+       
+        
     <!--
 
     -->
@@ -29,6 +40,9 @@
 </style>
 <script>
 import axios from 'axios'
+import { decodeCredential } from 'vue3-google-login';
+// import GoogleLogo from './assets/google.svg';
+// import { getGoogleUrl } from '../../utils/getGoogleUrl';
 
 export default {
     name: 'login',
@@ -60,12 +74,23 @@ export default {
                     google_token:response.credential
             }
             // const toast = useToast();
-            // console.log(response.credential)
+            //  console.log(data.google_token)
             //different module
-             const cred = await axios.post('http://localhost:3000/auth/google/login',data); 
-             console.log(cred)
-            //  localStorage.setItem('access_token',cred.data.access_token);
-            //  console.log(cred.data.access_token)
+            // console.log(decodeCredential(data.google_token))
+
+            let user = decodeCredential(data.google_token)
+
+            let data_user ={
+                        email: user.email,
+                        name: user.name,
+                        picture: user.picture,
+                        verified: user.email_verified,
+            }
+             console.log(data_user)
+            // console.log(user.email)
+            const res = await axios.post('http://localhost:3000/auth/google/SignUp',data_user); 
+            console.log(res)
+             localStorage.setItem('access_token',res.data.access_token);
              this.$router.push('/home');
         },
 
@@ -74,14 +99,10 @@ export default {
                     username: this.Admin.username,
                     password: this.Admin.password
             }
-         
                 const response = await axios.post('http://localhost:3000/auth/local/signIn', data)
                 console.log(response)
                 localStorage.setItem('access_token', response.data.access_token);
                 this.$router.push('/home');
-
-                
-
 
         //     axios.post('http://localhost:3000/auth/local/signIn',data ).then((res)=>{
              
@@ -93,6 +114,10 @@ export default {
         //  })
         
       },
+        async googleSubmit(){
+            const request = await axios.get('http://localhost:3000/auth/callback')
+        }
+
             // var data = new formData();
             // data.append(this.Admin.username);
             // data.append(this.Admin.password);

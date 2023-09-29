@@ -12,18 +12,13 @@ export class TokenlogsService {
   constructor(@InjectRepository(User) private readonly userRepository: Repository<User>,
           private jwtServices: JwtService){}
 
-     
-   async googleSignin(createTokenlogDto:CreateTokenlogDto): Promise<any>{
-
-    // const user = await this.jwtServices.signAsync();
-
-   }       
+       
 
  
   async signinLocal(createTokenlogDto:CreateTokenlogDto,): Promise<any>{
 
     // console.log(createTokenlogDto)
-   const  user = await this.userRepository.findOneBy({username: createTokenlogDto.username});
+   const  user = await this.userRepository.findOneBy({email: createTokenlogDto.username});
 
    if(user){
           const match = await bcrypt.compare(createTokenlogDto.password, user.password);
@@ -31,7 +26,7 @@ export class TokenlogsService {
           // if(user?.password !== user.password) throw new UnauthorizedException('Password incorrect');
           if(match)
            {
-          const payload = { sub: user.id, username: user.username};
+          const payload = { sub: user.id, username: user.email};
           //  console.log(payload)
           return {
             access_token: await this.jwtServices.signAsync(payload),
@@ -46,7 +41,7 @@ export class TokenlogsService {
       // return 'Invalid Credentials';
       
     }
-    // console.log(user)
+     console.log(user)
 
 
 

@@ -11,6 +11,7 @@ export class TokenlogsController {
   signinLocal(@Body() createTokenlogDto: CreateTokenlogDto) {
     return this.tokenlogsService.signinLocal(createTokenlogDto);
   }
+  
   @Post('local/signUp')
   signupLocal(@Body() createTokenlogDto: CreateTokenlogDto) {
     return this.tokenlogsService.signupLocal(createTokenlogDto);

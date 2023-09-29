@@ -9,23 +9,15 @@ import { Repository } from 'typeorm';
 export class UsersService {
   constructor(@InjectRepository(User) private readonly usersRepository: Repository<User>){}
   
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+
+
+  findAll(email: string) {
+    return this.usersRepository.findOneBy({email});
   }
 
-  findAll() {
-    return this.usersRepository.find();
-  }
 
-  findOne(username: string) {
-    return this.usersRepository.findOneBy({username});
-  }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
-  }
+ 
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
-  }
+
 }
