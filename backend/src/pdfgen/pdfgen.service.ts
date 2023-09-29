@@ -29,7 +29,6 @@ export class PdfgenService {
     //   'as.name as name',
     // ])
     // .getRawMany();
-  
     const data = {
     title: '',
     H1:`QUALITATIVE CONTRIBUTION (QCE) RESULTS`,
@@ -85,6 +84,7 @@ export class PdfgenService {
     // const imagefooter = `<div style=" width: 75%; margin: 0 2cm">
     // <img style="height: 50px;" src="http://localhost:3000/pdfgen/footer" />  
     //   </div>`
+    
     const options = {
       format: 'A4',
       displayHeaderFooter: true,
@@ -96,10 +96,24 @@ export class PdfgenService {
       },
       headerTemplate:``,
        footerTemplate:
-        '<div style="width: 100%; text-align: center; font-size: 10px;">Page <span class="pageNumber"> </span> of <span class="totalPages"></span></div>',
+        '<div style="width: 100%; text-align: center; font-size: 10px;"> Page <span class="pageNumber"> </span> of <span class="totalPages"></span></div>',
+    
+    //  `<div style="display:flex;width:100%;font-size: 10px;padding: 5px 0;margin:auto;border-bottom: 0.5px solid black;">
+    //       <div style="width:50%;text-align:center">HeaderHeaderHeaderHeaderHeaderHeaderHeaderHeaderHeaderHeaderHeader</div>
+    //       <div style="width:50%"><img src="public/images/CaptureFooter.png" style="width:30px;height:30px;"/></div>
+    //       <div style="width:25%;text-align:right"></div>
+    //  </div>`
       landscape: false,
     };
-    const filePath = join(process.cwd(), './src/templates', 'pdf-invoice.hbs');;
+
+    // function base64Encode(file) {
+    //   return fs.readFileSync(file, {encoding: 'base64'});
+    // }
+    
+    // function logo() {
+    //   return '<img height="13" src="data:image/png;base64,' + base64Encode(appRoot + 'images/CaptureFooter.png') + '"/>';
+    // }
+    const filePath = join(process.cwd(), './src/templates', 'pdf-invoice.hbs');
     return createPdf(filePath, options, data);
   }
 }

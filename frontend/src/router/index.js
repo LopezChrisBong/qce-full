@@ -42,6 +42,7 @@ import Tables from '../components/pages/Table.vue'
 import PrintReport from '../components/pages/printreport.vue'
 import Login from '../components/views/login.vue'
 import SignUp from '../components/views/signup.vue'
+import Google from '../components/views/google.vue'
 
 const routes =[
     {
@@ -256,6 +257,11 @@ const routes =[
         path: '/printreport',
         name: 'PrintReport',
         component: PrintReport
+    }, 
+    {
+        path: '/Google',
+        name: 'Google',
+        component: Google
     }, 
 
 ]
