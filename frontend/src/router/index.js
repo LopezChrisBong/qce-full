@@ -1,5 +1,5 @@
-import {createRouter, createWebHistory} from 'vue-router'
-
+import {createRouter, createWebHistory } from 'vue-router'
+import store from '../store';
 import Home from '../components/pages/home.vue'
 import Nav from '../components/pages/navigation/qce_nav.vue'
 import Response from '../components/pages/response.vue'
@@ -48,220 +48,266 @@ const routes =[
     {
         path: '/',
         name: 'Login',
-        component: Login
+        component: Login,
+        meta: {requiresVisitor: true},
+        
     },
     {
         path: '/home',
         name: 'Home',
-        component: Home
+        component: Home,
+        meta: {requiresLogin: true},
+       
     },
     
     {
         path: '/signup',
         name: 'SignUp',
-        component: SignUp
+        component: SignUp,
+        meta: {requiresAuth: true},
+
     },
     {
         path: '/nav',
         name: 'Nav',
-        component: Nav
+        component: Nav,
+        meta: {requiresAuth: true},
     },
     {
         path: '/response',
         name: 'Response',
-        component: Response
+        component: Response,
+        meta: {requiresAuth: true},
     },
     {
         path: '/response_form',
         name: 'ResponseForm',
-        component: ResponseForm
+        component: ResponseForm,
+        meta: {requiresAuth: true},
     },
     {
         path: '/qceevaluation',
         name: 'Evaluate',
-        component: Evaluation
+        component: Evaluation,
+        meta: {requiresAuth: true},
     },
     {
         path: '/commitment',
         name: 'Commitment',
-        component: Commitment
+        component: Commitment,
+        meta: {requiresAuth: true},
     },
     {
         path: '/commitmentq2',
         name: 'Commitmentq2',
-        component: Commitmentq2
+        component: Commitmentq2,
+        meta: {requiresAuth: true},
     },
     {
         path: '/commitmentq3',
         name: 'Commitmentq3',
-        component: Commitmentq3
+        component: Commitmentq3,
+        meta: {requiresAuth: true},
     },
     {
         path: '/commitmentq4',
         name: 'Commitmentq4',
-        component: Commitmentq4
+        component: Commitmentq4,
+        meta: {requiresAuth: true},
     },
     {
         path: '/commitmentq5',
         name: 'Commitmentq5',
-        component: Commitmentq5
+        component: Commitmentq5,
+        meta: {requiresAuth: true},
     },
     {
         path: '/knowledge',
         name: 'Knowledge',
-        component: Knowledge
+        component: Knowledge,
+        meta: {requiresAuth: true},
     },
     {
         path: '/knowledgeq2',
         name: 'Knowledgeq2',
-        component: Knowledgeq2
+        component: Knowledgeq2,
+        meta: {requiresAuth: true},
     },
     {
         path: '/knowledgeq3',
         name: 'Knowledgeq3',
-        component: Knowledgeq3
+        component: Knowledgeq3,
+        meta: {requiresAuth: true},
     },
     {
         path: '/knowledgeq4',
         name: 'Knowledgeq4',
-        component: Knowledgeq4
+        component: Knowledgeq4,
+        meta: {requiresAuth: true},
     },
     {
         path: '/knowledgeq5',
         name: 'Knowledgeq5',
-        component: Knowledgeq5
+        component: Knowledgeq5,
+        meta: {requiresAuth: true},
     },
     {
         path: '/independent',
         name: 'Independent',
-        component: Independent
+        component: Independent,
+        meta: {requiresAuth: true},
     },
     {
         path: '/independentq2',
         name: 'Independentq2',
-        component: Independentq2
+        component: Independentq2,
+        meta: {requiresAuth: true},
     },
     {
         path: '/independentq3',
         name: 'Independentq3',
-        component: Independentq3
+        component: Independentq3,
+        meta: {requiresAuth: true},
     },
     {
         path: '/independentq4',
         name: 'Independentq4',
-        component: Independentq4
+        component: Independentq4,
+        meta: {requiresAuth: true},
     },
     {
         path: '/independentq5',
         name: 'Independentq5',
-        component: Independentq5
+        component: Independentq5,
+        meta: {requiresAuth: true},
     },
     {
         path: '/management',
         name: 'Management',
-        component: Management
+        component: Management,
+        meta: {requiresAuth: true},
     },
     {
         path: '/managementq2',
         name: 'Managementq2',
-        component: Managementq2
+        component: Managementq2,
+        meta: {requiresAuth: true},
     },
     {
         path: '/managementq3',
         name: 'Managementq3',
-        component: Managementq3
+        component: Managementq3,
+        meta: {requiresAuth: true},
     },
     {
         path: '/managementq4',
         name: 'Managementq4',
-        component: Managementq4
+        component: Managementq4,
+        meta: {requiresAuth: true},
     },
     {
         path: '/managementq5',
         name: 'Managementq5',
-        component: Managementq5
+        component: Managementq5,
+        meta: {requiresAuth: true},
     },
     {
         path: '/comments',
         name: 'Comments',
-        component: Comments
+        component: Comments,
+        meta: {requiresAuth: true},
 
     },
     {
         path: '/review',
         name: 'Review',
-        component: Review
+        component: Review,
+        meta: {requiresAuth: true},
     },
     {
         path: '/qcereportiaas',
         name: 'QCEReportiaas',
-        component: QCEReportiaas
+        component: QCEReportiaas,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/qcereportic',
         name: 'QCEReportic',
-        component: QCEReportic
+        component: QCEReportic,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/qcereportited',
         name: 'QCEReportited',
-        component: QCEReportited
+        component: QCEReportited,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/qcereportilegg',
         name: 'QCEReportilegg',
-        component: QCEReportilegg
+        component: QCEReportilegg,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/facultyreportiaas',
         name: 'FacultyReportiaas',
-        component: FacultyReportiaas
+        component: FacultyReportiaas,
+        meta: {requiresAuth: true},
     }, 
   
     {
         path: '/facultyreportilegg',
         name: 'FacultyReportilegg',
-        component: FacultyReportilegg
+        component: FacultyReportilegg,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/facultyreportic',
         name: 'FacultyReportic',
-        component: FacultyReportic
+        component: FacultyReportic,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/facultyreportited',
         name: 'FacultyReportited',
-        component: FacultyReportited
+        component: FacultyReportited,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/pdfreport',
         name: 'Pdfreport',
-        component: Pdfreport
+        component: Pdfreport,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/choose',
         name: 'Choose',
-        component: Choose
+        component: Choose,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/quiz',
         name: 'Quiz',
-        component: Quiz
+        component: Quiz,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/tables',
         name: 'Tables',
-        component: Tables
+        component: Tables,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/printreport',
         name: 'PrintReport',
-        component: PrintReport
+        component: PrintReport,
+        meta: {requiresAuth: true},
     }, 
     {
         path: '/Google',
         name: 'Google',
-        component: Google
+        component: Google,
+        meta: {requiresAuth: true},
     }, 
 
 ]
@@ -270,20 +316,66 @@ const router = createRouter({
     history:createWebHistory(),
     routes,
 });
-// router.beforeEach( (to,from,next) => {
-//     let routerAuthCheck = true;
-//         if (to.matched.some(record => record.meta.requiresAuth)){
-//             if(routerAuthCheck){
-//                 next();
-//             }
-//             else{
-//                 router.replace('/')
-//             }
-//         }
-//         else{
-//           next();
-//         }
-//   });
+
+router.beforeEach((to, from, next) => {
+    console.log(to);
+    console.log(from);
+    let user =localStorage.getItem('access_token');
+    console.log(user)
+    // console.log(store.state.user)
+    // console.log(record.meta.requiresAuth)
+    // if (to.matched.some(record => record.meta.requiresAuth)){
+    //     if(routerAuthCheck){
+    //         next();
+    //     }
+    //     else{
+    //         next('/')
+    //     }
+    // }
+    // else{
+    //   next();
+    // }
+    // if (to.meta.requiresAuth && !user){
+    //     router.replace({path: '/'});
+    //     return
+    // }
+    if (to.matched.some((record) => record.meta.requiresLogin)) {
+        if (!user) {
+          next({ path: "/" });
+        } 
+        else {
+          next();
+        }
+      } 
+      // if user is logged in and go to log in page redirect them to home page
+      else if (to.matched.some(record => record.meta.requiresVisitor)) {
+        if (user) {
+          next({ path: '/home'});
+        }
+        else {
+          next();
+        }
+      }
+      // 
+      else {
+        next();
+      }
+    
+  });
+// router.beforeEach((to, from, next) => {
+//     let user = store.state.user;
+//     console.log(user)
+//     if (to.meta.requireAuth) {
+//      const token = localStorage.getItem('access_token');
+//      if (token && token !== 'null') {
+//       next();
+//      } else {
+//       next('/login');
+//      }
+//     } else {
+//      next();
+//     }
+//    });
 
 
 export default router
