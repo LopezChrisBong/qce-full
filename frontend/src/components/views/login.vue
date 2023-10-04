@@ -1,11 +1,13 @@
-<template>
-    <div class=" border bg-green-300">
+<template> 
+    <div class="" style="width: 100%;">
+        <div class="flex justify-center">
+        <div class="w-10/12  lg:w-6/12 border rounded-lg mt-5 mb-5">
         <div class="flex justify-center">
         <p class="text-lg font-semibold">Login</p>
         </div>
-        <div class="flex justify-center bg-green-500 p">
+        <div class="flex justify-center bg-green-100 ">
     <form @submit.prevent="handleSubmit">
-            <div>
+            <div class="mt-5">
                 <input type="email" v-model="Admin.username" placeholder="Enter username" class="border mb-2 px-12 py-1 " required/><br/>
                 <input type="password" v-model="Admin.password" placeholder="Enter Password" class="border px-12 py-1" required /> <br/>
             </div>
@@ -13,8 +15,8 @@
                 <button class="border-none bg-green-400 text-center p-1 w-16">Login</button>
                <a href="signup" class="bg-green-400 p-1 rounded-md">signup</a>
             </div> 
-            <div>
-               <div id="googleSignInBtn" class="g_id_signin" style="margin-top: 1rem; margin-left: 0; padding: 1rem;"></div> 
+            <div class="">
+               <div id="googleSignInBtn" class="g_id_signin" style="margin-top: 1rem; margin-left: .3rem; padding: 1rem;"></div> 
             </div>
         <!-- <GoogleLogin :callback="callback" prompt auto-login/> -->
 
@@ -24,13 +26,8 @@
     </div>
    
 </div>   
-    
-    
-       
-        
-    <!--
-
-    -->
+    </div>
+    </div>
     </div>
 </template>
 <style>
@@ -62,6 +59,10 @@ export default {
                 client_id: import.meta.env.VITE_GOOGLE_CLIENTID,
                 callback:this.handleCredentialResponse,
             })
+        //     let user = localStorage.getItem('user-info');
+        //     if(user){
+        //     this.$router.push({name:'home'})
+        // }
 
         },
     
@@ -86,12 +87,21 @@ export default {
                         picture: user.picture,
                         verified: user.email_verified,
             }
-             console.log(data_user)
+            //  console.log(data_user)
             // console.log(user.email)
-            const res = await axios.post('http://localhost:3000/auth/google/SignUp',data_user); 
-            console.log(res)
-             localStorage.setItem('access_token',res.data.access_token);
+            const res = await axios.post('http://localhost:3000/auth/google/SignUp',data_user).then(response =>{
+            // console.log(response)
+             localStorage.setItem('access_token',response.data.access_token);
+             this.$store.dispatch('SET_USER', response.data.user)
+             const users_data = this.$store.state.user;
+             console.log(user)
+            //  localStorage.setItem('name',user.name)
+            //  console.log(this.$store.state.user)
+            // console.log(users_data)
+            //  this.$store.commit('UPDATE_USER', users_data)
              this.$router.push('/home');
+            }); 
+
         },
 
         async handleSubmit(){
