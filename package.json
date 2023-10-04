@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "encrypt-storage": "^2.12.16",
-    "vuex-persistedstate": "^4.1.0"
-  }
-}
