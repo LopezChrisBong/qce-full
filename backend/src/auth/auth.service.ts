@@ -68,15 +68,13 @@ async signinLocal(createAuthDto:CreateAuthDto,): Promise<any>{
       // console.log(this.jwtServices.signAsync(payload))
     return {
       access_token: await this.jwtServices.signAsync(payload),
+      user: existingUser
       };
    }
  if(existingUser === null){
       const usersave =  this.authRepository.create(createAuthDto);
       return  this.authRepository.save(usersave);
  }
-
-
-
 
   if(existingUser){
     const payload = { sub: existingUser.id, email: existingUser.email};

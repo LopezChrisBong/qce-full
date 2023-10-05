@@ -322,6 +322,7 @@ router.beforeEach((to, from, next) => {
     console.log(from);
     let user =localStorage.getItem('access_token');
     console.log(user)
+     console.log(store.state.user)
     // console.log(store.state.user)
     // console.log(record.meta.requiresAuth)
     // if (to.matched.some(record => record.meta.requiresAuth)){

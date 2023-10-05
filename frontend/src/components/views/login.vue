@@ -90,15 +90,15 @@ export default {
             //  console.log(data_user)
             // console.log(user.email)
             const res = await axios.post('http://localhost:3000/auth/google/SignUp',data_user).then(response =>{
-            // console.log(response)
+             console.log(response)
              localStorage.setItem('access_token',response.data.access_token);
-             this.$store.dispatch('SET_USER', response.data.user)
-             const users_data = this.$store.state.user;
-             console.log(user)
+             this.$store.dispatch('SET_USER',response.data.user)
+            //   const users_data = this.$store.state.user;
+            //   console.log(users_data)
             //  localStorage.setItem('name',user.name)
             //  console.log(this.$store.state.user)
             // console.log(users_data)
-            //  this.$store.commit('UPDATE_USER', users_data)
+            //  console.log(this.$store.commit('UPDATE_USER',response.data.user))
              this.$router.push('/home');
             }); 
 
