@@ -14,7 +14,6 @@ const store = createStore({
     error: {},
     },
     getters:{
-
     },
     mutations:{
         SET_USER_DATA(state, user) {
@@ -43,8 +42,6 @@ const store = createStore({
             state.loadingUser = false;
             state.access_token = '';
           },
-      
-
     },
     actions:{
         SET_USER(context, payload){
@@ -54,13 +51,15 @@ const store = createStore({
     modules:{
 
     },
-    plugins: [createPersistedState({ 
+    plugins: [
+      createPersistedState({ 
       storage: { 
         setItem: (key, state) => encryptStorage.setItem(key, state),
         getItem: (key) => encryptStorage.getItem(key),
         removeItem: (key) => encryptStorage.removeItem(key)
       }
-    })],
+    })
+  ],
   })
   
   export default store;

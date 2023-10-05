@@ -162,8 +162,8 @@
         >
           <div class="profile-details">
             <img
-              v-if="profileImg"
-              :src="profileImg"
+              v-if="user_image"
+              :src="user_image"
               alt="profileImg"
             >
             <i
@@ -172,7 +172,7 @@
             />
             <div class="name_job">
               <div class="name">
-                {{ profileName }}
+                {{ user_name }}
               </div>
               <div class="job">
                 {{ profileRole }}
@@ -194,15 +194,12 @@
   
   <script>
   import Icon from '../../icon.vue'
+  import store from '../../../store'
     export default {
 
       components:{
         Icon
       },
-      data(){
-      return{isHidden:false}
-    },
-  
       name: 'SidebarMenuAkahon',
       props: {
         //! Menu settings
@@ -346,11 +343,15 @@
       data() {
         return {
           isOpened: false,
+          isHidden:false,
+          user_name:'',
+          user_image:'',
         }
       },
       mounted() {
         this.isOpened = this.isMenuOpen
         this.tooltipAttached()
+        this.ifLogged()
       },
       computed: {
         cssVars() {
@@ -404,6 +405,14 @@
         logout(){
              localStorage.clear();
              this.$router.push({path:'/'})
+        },
+        ifLogged(){
+          const user = store.state.user;
+          if(user){
+             this.user_name = user.name;
+             this.user_image = user.picture;
+          }
+         
         }
 
       },
