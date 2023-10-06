@@ -84,7 +84,8 @@ import Icon from '../../icon.vue'
     Icon
     },
     data(){
-    return{isHidden:false}
+    return{isHidden:false
+    }
   },
 }
 </script>

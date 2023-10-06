@@ -41,6 +41,7 @@
         components:{
           Sidebarmob
         },
+        
         methods:{
         logout(){
              localStorage.clear();

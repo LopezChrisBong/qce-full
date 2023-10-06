@@ -200,7 +200,7 @@
       components:{
         Icon
       },
-      name: 'SidebarMenuAkahon',
+      name: 'SidebarMenu',
       props: {
         //! Menu settings
         isMenuOpen: {
@@ -405,6 +405,7 @@
         logout(){
              localStorage.clear();
              this.$router.push({path:'/'})
+             router.go(1)
         },
         ifLogged(){
           const user = store.state.user;
