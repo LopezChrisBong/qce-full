@@ -1,6 +1,7 @@
 <template>
 <div class="flex justify-center">
   <div class="w-10/12 lg:w-8/12">
+   
   <div><div class="steps-container">
       <ul class="steps-list">
         <li class="step">
@@ -63,7 +64,12 @@
     </div>
   </div>
   <div> <div class="stepper-content">
-    
+    <a href="/comments" class=" floating-btn">
+      <p>Back</p>
+    </a>
+    <a href="#" class="material-icons float-btn ">
+      add
+    </a>
     <div class="stepper-panel">
       <div class="font-semibold">Review and Submit</div>
     </div>
@@ -120,18 +126,64 @@
             <a href="/Review"><button class=" btn button-next">Submit</button></a> 
           </div>
       </div>
-      
   </div></div>
   </div>
 </div>
-
-    
-  
-   
-  
-  
   </template>
+  <script>
+  import Icon from '../icon.vue'
+  export default{
+    components:{
+      Icon
+    }
+  }
+  </script>
   <style>
+
+
+
+  .float-btn {
+    width: 80px;
+    height: 80px;
+    background: #009879;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 40px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    transition: background 0.25s;
+  }
+  .floating-btn {
+    width: 80px;
+    height: 80px;
+    background: #009879;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    transition: background 0.25s;
+  }
+  .float-btn:active {
+    background: #007D63;
+    color:#FFFFFF;
+  }
+    .float-btn:hover {
+    color:#009879;
+    background: #007D63;
+  }  
   .steps-container{
     width: 90%;
     margin: 3rem;
